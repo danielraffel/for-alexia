@@ -1,0 +1,1236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alexia’s SF Hill-Slaying eBike Showdown</title>
+  <meta name="description" content="Lectric ONE Long-Range vs Tern HSD S00 (Gen 2): a dramatic, fun, SF-hill-focused comparison with pros/cons + a chooser." />
+
+  <!-- Open Graph (for link previews) -->
+  <meta property="og:title" content="Alexia’s SF Hill-Slaying eBike Showdown" />
+  <meta property="og:description" content="Two e-bikes enter. One SF hill leaves. Pros/cons + a playful chooser + a dramatic gift opening." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg: #0b0b10;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --faint: rgba(255,255,255,.50);
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 16px 40px rgba(0,0,0,.45);
+      --radius: 18px;
+
+      --a1: #ff3ea5;
+      --a2: #7c4dff;
+      --a3: #37d5ff;
+      --a4: #5dff87;
+
+      --ok: rgba(93,255,135,.90);
+      --warn: rgba(255,206,84,.92);
+      --hot: rgba(255,62,165,.95);
+    }
+
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 15% 0%, rgba(255,62,165,.22), transparent 55%),
+        radial-gradient(900px 700px at 85% 10%, rgba(124,77,255,.20), transparent 55%),
+        radial-gradient(900px 700px at 60% 95%, rgba(55,213,255,.12), transparent 55%),
+        radial-gradient(900px 700px at 10% 90%, rgba(93,255,135,.10), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+
+    a{ color: rgba(255,255,255,.90); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover{ color: #fff; }
+
+    .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    .hero{
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border-radius: calc(var(--radius) + 6px);
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: conic-gradient(from 180deg,
+        rgba(255,62,165,.35),
+        rgba(124,77,255,.25),
+        rgba(55,213,255,.22),
+        rgba(93,255,135,.20),
+        rgba(255,62,165,.35)
+      );
+      filter: blur(28px);
+      opacity:.55;
+      z-index:0;
+    }
+    .hero > *{ position: relative; z-index:1; }
+
+    .kicker{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.25);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .pill .dot{
+      width:10px;height:10px;border-radius:99px;
+      background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3), var(--a4));
+      box-shadow: 0 0 12px rgba(255,255,255,.12);
+    }
+
+    h1{
+      margin: 10px 0 8px;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.1;
+      letter-spacing: -0.6px;
+    }
+    .sub{
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 80ch;
+      margin: 0 0 14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+    }
+
+    .card-h{
+      padding: 14px 14px 10px;
+      border-bottom: 1px solid var(--border);
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .title{
+      display:flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+    .title strong{
+      font-size: 18px;
+      letter-spacing: -.2px;
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
+    }
+    .title span{
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .badge{
+      flex: 0 0 auto;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.25);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+    }
+    .badge b{ color: #fff; }
+
+    .card-b{ padding: 14px; }
+
+    .statgrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 520px){
+      .statgrid{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .stat{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+      padding: 10px 10px;
+      min-height: 70px;
+    }
+    .stat .k{ color: var(--faint); font-size: 12px; }
+    .stat .v{ margin-top: 4px; font-size: 15px; }
+    .stat .s{ margin-top: 2px; color: var(--muted); font-size: 12px; }
+
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    @media (max-width: 720px){
+      .twoCol{ grid-template-columns: 1fr; }
+    }
+
+    .list{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+      padding: 12px 12px;
+    }
+    .list h3{
+      margin:0 0 8px;
+      font-size: 14px;
+      color: #fff;
+      letter-spacing: -.1px;
+      display:flex;
+      gap: 8px;
+      align-items: center;
+    }
+    ul{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    li{ margin: 6px 0; }
+
+    .section{
+      margin-top: 14px;
+      padding: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .section h2{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -.2px;
+    }
+    .section p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .callouts{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 720px){
+      .callouts{ grid-template-columns: 1fr; }
+    }
+    .callout{
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.18);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .callout .h{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .tag{
+      font-size: 12px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .tag.ok{ color: rgba(255,255,255,.92); border-color: rgba(93,255,135,.25); background: rgba(93,255,135,.08); }
+    .tag.warn{ color: rgba(255,255,255,.92); border-color: rgba(255,206,84,.25); background: rgba(255,206,84,.08); }
+    .tag.hot{ color: rgba(255,255,255,.92); border-color: rgba(255,62,165,.25); background: rgba(255,62,165,.08); }
+    .callout p{ margin:0; color: var(--muted); font-size: 13.5px; }
+
+    .chooser{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .row{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 10px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(0,0,0,.18);
+    }
+    .row label{
+      font-size: 13px;
+      color: var(--muted);
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      min-width: 180px;
+    }
+    input[type="range"]{
+      width: 100%;
+      accent-color: #fff;
+    }
+    .num{
+      width: 44px;
+      text-align: right;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+      font-size: 13px;
+    }
+
+    .btns{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    button{
+      appearance:none;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 12px;
+      font-size: 13px;
+      cursor:pointer;
+    }
+    button:hover{ background: rgba(255,255,255,.10); }
+    button:active{ transform: translateY(1px); }
+
+    .verdict{
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(255,62,165,.14), rgba(124,77,255,.12), rgba(55,213,255,.10));
+      border-radius: 16px;
+      padding: 12px 12px;
+    }
+    .verdict h3{
+      margin: 0 0 6px;
+      font-size: 14px;
+      display:flex;
+      align-items:center;
+      gap: 8px;
+    }
+    .verdict p{
+      margin: 0;
+      color: rgba(255,255,255,.86);
+      font-size: 13.5px;
+    }
+    .small{
+      color: var(--faint);
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .footer{
+      margin-top: 14px;
+      padding: 12px 14px;
+      color: var(--faint);
+      font-size: 12px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    .spark{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .spark svg{ width:16px; height:16px; opacity:.9; }
+
+    /* ===== Dramatic Gift Overlay ===== */
+    .overlay{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(900px 600px at 20% 20%, rgba(255,62,165,.25), transparent 60%),
+        radial-gradient(900px 600px at 80% 30%, rgba(124,77,255,.22), transparent 60%),
+        radial-gradient(900px 600px at 50% 85%, rgba(55,213,255,.16), transparent 65%),
+        rgba(5,5,10,.88);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 18px;
+    }
+    .overlay.hidden{ display:none; }
+
+    .giftStage{
+      width: min(720px, 94vw);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(0,0,0,.35);
+      box-shadow: 0 24px 70px rgba(0,0,0,.60);
+      overflow: hidden;
+      position: relative;
+    }
+    .giftTopBar{
+      padding: 14px 14px 10px;
+      border-bottom: 1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .giftTitle{
+      display:flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .giftTitle b{ font-size: 14px; letter-spacing: -.1px; }
+    .giftTitle span{ color: var(--muted); font-size: 12px; }
+
+    .giftBody{
+      padding: 16px 16px 18px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items: center;
+    }
+    @media (max-width: 720px){
+      .giftBody{ grid-template-columns: 1fr; }
+    }
+
+    .giftCopy{
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .giftCopy b{ color: rgba(255,255,255,.92); }
+    .giftActions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .primaryBtn{
+      border: 1px solid rgba(255,255,255,.18);
+      background: linear-gradient(90deg, rgba(255,62,165,.22), rgba(124,77,255,.18), rgba(55,213,255,.14));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .primaryBtn:hover{ background: linear-gradient(90deg, rgba(255,62,165,.28), rgba(124,77,255,.24), rgba(55,213,255,.18)); }
+
+    /* Gift Box */
+    .boxWrap{
+      position: relative;
+      height: 280px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+      display:grid;
+      place-items:center;
+    }
+    .spotlight{
+      position:absolute;
+      inset:-30%;
+      background: radial-gradient(circle at 50% 30%, rgba(255,255,255,.14), transparent 55%);
+      filter: blur(2px);
+      opacity: .9;
+      pointer-events: none;
+    }
+
+    .giftBox{
+      width: 240px;
+      height: 170px;
+      position: relative;
+      transform: translateY(12px);
+    }
+    .giftBox .base{
+      position:absolute;
+      left:0; right:0; bottom:0;
+      height: 115px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(135deg, rgba(255,62,165,.22), rgba(124,77,255,.16), rgba(55,213,255,.12));
+      box-shadow: 0 18px 50px rgba(0,0,0,.55);
+    }
+    .giftBox .lid{
+      position:absolute;
+      left:-10px; right:-10px; top: 6px;
+      height: 62px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      transform-origin: 50% 100%;
+      transform: rotateX(0deg) translateY(0px);
+      box-shadow: 0 14px 40px rgba(0,0,0,.55);
+    }
+    .giftBox .ribbonV{
+      position:absolute;
+      top: 0;
+      left: 50%;
+      width: 34px;
+      height: 100%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.25);
+      border-left: 1px solid rgba(255,255,255,.12);
+      border-right: 1px solid rgba(255,255,255,.12);
+      overflow: hidden;
+    }
+    .giftBox .ribbonV::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: conic-gradient(from 90deg, rgba(255,62,165,.75), rgba(124,77,255,.75), rgba(55,213,255,.75), rgba(93,255,135,.75), rgba(255,62,165,.75));
+      filter: blur(10px);
+      opacity: .55;
+    }
+    .giftBox .ribbonH{
+      position:absolute;
+      left: 0; right: 0;
+      top: 65%;
+      height: 30px;
+      background: rgba(0,0,0,.22);
+      border-top: 1px solid rgba(255,255,255,.12);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .giftBox .bow{
+      position:absolute;
+      left: 50%;
+      top: 6px;
+      transform: translateX(-50%);
+      width: 92px;
+      height: 46px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      pointer-events:none;
+    }
+    .giftBox .bow span{
+      width: 42px; height: 30px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(255,62,165,.28), rgba(124,77,255,.20), rgba(55,213,255,.14));
+      box-shadow: 0 10px 22px rgba(0,0,0,.35);
+    }
+
+    .giftStage.opening .giftBox .lid{
+      animation: lidOpen 900ms cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    @keyframes lidOpen{
+      0%{ transform: rotateX(0deg) translateY(0px); }
+      60%{ transform: rotateX(70deg) translateY(-10px); }
+      100%{ transform: rotateX(92deg) translateY(-14px); }
+    }
+
+    /* Queens on bikes */
+    .queens{
+      position:absolute;
+      inset: 0;
+      pointer-events:none;
+      overflow:hidden;
+    }
+    .queen{
+      position:absolute;
+      left: -40%;
+      top: 52%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      filter: drop-shadow(0 14px 18px rgba(0,0,0,.55));
+      opacity: 0;
+      white-space: nowrap;
+    }
+    .queen small{
+      font-size: 13px;
+      margin-left: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.28);
+      color: rgba(255,255,255,.85);
+      vertical-align: middle;
+    }
+
+    .giftStage.opening .queen{
+      opacity: 1;
+      animation: rideAcross 1900ms cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    .giftStage.opening .queen.q2{ animation-delay: 120ms; top: 60%; font-size: 38px; }
+    .giftStage.opening .queen.q3{ animation-delay: 240ms; top: 44%; font-size: 42px; }
+
+    @keyframes rideAcross{
+      0%{ transform: translate(-10%, -50%) rotate(-2deg) scale(.98); left:-40%; }
+      15%{ transform: translate(0%, -50%) rotate(0deg) scale(1.02); }
+      80%{ transform: translate(0%, -50%) rotate(1deg) scale(1.02); left: 90%; }
+      100%{ transform: translate(0%, -50%) rotate(1deg) scale(1.02); left: 130%; opacity: 0; }
+    }
+
+    /* Confetti */
+    .confetti{
+      position: absolute;
+      inset: 0;
+      pointer-events:none;
+      overflow:hidden;
+    }
+    .conf{
+      position:absolute;
+      top:-12px;
+      width:10px; height:14px;
+      border-radius: 2px;
+      opacity: .95;
+      transform: rotate(0deg);
+      animation: fall linear forwards;
+      box-shadow: 0 10px 20px rgba(0,0,0,.25);
+    }
+    @keyframes fall{
+      to{
+        transform: translateY(360px) rotate(360deg);
+        opacity: 0.9;
+      }
+    }
+
+    .fadeOut{
+      animation: fadeOut 520ms ease forwards;
+    }
+    @keyframes fadeOut{
+      to{ opacity:0; transform: translateY(6px); }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .giftStage.opening .giftBox .lid,
+      .giftStage.opening .queen,
+      .conf{ animation: none !important; }
+    }
+
+    /* Tiny helper highlight */
+    .hl{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 0 6px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Dramatic Gift Overlay -->
+  <div class="overlay" id="overlay" aria-modal="true" role="dialog">
+    <div class="giftStage" id="giftStage">
+      <div class="giftTopBar">
+        <div class="giftTitle">
+          <b>🎁 A very serious gift for Alexia</b>
+          <span>Prepared by: emotionally supportive bike nerds (with taste)</span>
+        </div>
+        <div class="badge"><b>Drama</b> <span class="mono">MAX</span></div>
+      </div>
+
+      <div class="giftBody">
+        <div class="giftCopy">
+          <p style="margin:0 0 10px;">
+            This is a <b>San Francisco hill survival kit</b> disguised as a bike comparison.
+            Click <span class="hl"><b>Open</b></span> and accept your fate: <b>clarity</b>.
+          </p>
+          <p style="margin:0 0 10px;">
+            Inside: drag queens on bicycles, a chooser widget, and enough practical advice to make you feel wildly cared for.
+          </p>
+          <div class="giftActions">
+            <button class="primaryBtn" id="openGiftBtn">Open the gift ✨</button>
+            <button id="skipBtn" title="Skip the theatrics">Skip drama →</button>
+          </div>
+          <div class="small">If you have “reduce motion” enabled, we’ll keep it classy and calm.</div>
+        </div>
+
+        <div class="boxWrap" aria-hidden="true">
+          <div class="spotlight"></div>
+
+          <div class="giftBox">
+            <div class="lid"></div>
+            <div class="bow"><span></span><span></span></div>
+            <div class="base"></div>
+            <div class="ribbonV"></div>
+            <div class="ribbonH"></div>
+          </div>
+
+          <div class="queens" id="queens">
+            <div class="queen q1">👑🚴‍♀️ <small>“Wheels, but make it couture.”</small></div>
+            <div class="queen q2">💅🚴‍♀️ <small>“Torque? I hardly know her.”</small></div>
+            <div class="queen q3">✨🚴‍♀️ <small>“We climb. We slay. We arrive.”</small></div>
+          </div>
+
+          <div class="confetti" id="confetti"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="kicker">
+        <span class="pill"><span class="dot"></span> made with love, dramatic flair, and respect for your calves</span>
+        <span class="pill">📍 San Francisco (hill edition)</span>
+        <span class="pill">🏳️‍🌈 rainbow-certified helpfulness</span>
+      </div>
+
+      <h1>Alexia’s SF Hill-Slaying eBike Showdown</h1>
+      <p class="sub">
+        Two bikes. One hill. Zero excuses. We compared <b>Lectric ONE Long-Range</b> vs <b>Tern HSD S00 (Gen 2)</b>
+        like the friends who bring snacks <i>and</i> spreadsheets.
+      </p>
+
+      <div class="grid">
+        <!-- Lectric -->
+        <div class="card" id="card-lectric">
+          <div class="card-h">
+            <div class="title">
+              <strong>Lectric ONE Long-Range</strong>
+              <span>“value diva with an unusually fancy drivetrain”</span>
+            </div>
+            <div class="badge"><b id="price-lectric">$2,399</b> <span class="mono">listed</span></div>
+          </div>
+          <div class="card-b">
+            <div class="statgrid">
+              <div class="stat">
+                <div class="k">Motor</div>
+                <div class="v">Rear hub</div>
+                <div class="s">750W (1310W peak)</div>
+              </div>
+              <div class="stat">
+                <div class="k">Torque</div>
+                <div class="v">85 Nm</div>
+                <div class="s">zippy starts</div>
+              </div>
+              <div class="stat">
+                <div class="k">Battery</div>
+                <div class="v">672 Wh</div>
+                <div class="s">48V 14Ah</div>
+              </div>
+              <div class="stat">
+                <div class="k">Drivetrain</div>
+                <div class="v">Pinion 6-spd</div>
+                <div class="s">+ Gates belt</div>
+              </div>
+              <div class="stat">
+                <div class="k">Assist</div>
+                <div class="v">Up to 28 mph</div>
+                <div class="s">Class 1/2/3 settings</div>
+              </div>
+              <div class="stat">
+                <div class="k">Weight</div>
+                <div class="v">48 lb</div>
+                <div class="s">battery removable</div>
+              </div>
+            </div>
+
+            <div class="twoCol">
+              <div class="list">
+                <h3>✅ Pros (she’s serving)</h3>
+                <ul>
+                  <li><b>Massive value</b>: serious specs for the money.</li>
+                  <li><b>Fast settings</b>: can be set up for higher assist speed (hello, “I’m late but cute”).</li>
+                  <li><b>Clean + low-maintenance</b>: belt + sealed gearbox = fewer greasy surprises.</li>
+                  <li><b>Lighter-ish</b>: noticeably easier if you ever have stairs or tight storage.</li>
+                </ul>
+              </div>
+              <div class="list">
+                <h3>⚠️ Cons (the hill will test you)</h3>
+                <ul>
+                  <li><b>Hub motor behavior on very steep climbs</b>: still strong, but can feel more “push” than a mid-drive at low speeds.</li>
+                  <li><b>Cadence sensor</b>: assist feels more “mode-y” than “mind-reading.”</li>
+                  <li><b>DTC support</b>: you’re not automatically getting white-glove local shop assembly/service.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section">
+              <h2>Lectric in one sentence</h2>
+              <p>
+                If you want <b>the best deal</b> with a shockingly premium drivetrain and you don’t mind that the steepest SF grades
+                might feel a little more “work,” this is the “I can’t believe it’s this affordable” pick.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tern -->
+        <div class="card" id="card-tern">
+          <div class="card-h">
+            <div class="title">
+              <strong>Tern HSD S00 (Gen 2)</strong>
+              <span>“bougie mountain goat energy”</span>
+            </div>
+            <div class="badge"><b id="price-tern">$5,949</b> <span class="mono">listed</span></div>
+          </div>
+          <div class="card-b">
+            <div class="statgrid">
+              <div class="stat">
+                <div class="k">Motor</div>
+                <div class="v">Bosch mid-drive</div>
+                <div class="s">Performance Line</div>
+              </div>
+              <div class="stat">
+                <div class="k">Torque</div>
+                <div class="v">75 Nm</div>
+                <div class="s">340% assist</div>
+              </div>
+              <div class="stat">
+                <div class="k">Battery</div>
+                <div class="v">545 Wh</div>
+                <div class="s">Bosch PowerPack</div>
+              </div>
+              <div class="stat">
+                <div class="k">Drivetrain</div>
+                <div class="v">Enviolo IGH</div>
+                <div class="s">+ Gates belt</div>
+              </div>
+              <div class="stat">
+                <div class="k">Assist</div>
+                <div class="v">20 mph</div>
+                <div class="s">Class 1</div>
+              </div>
+              <div class="stat">
+                <div class="k">Weight</div>
+                <div class="v">~61.7 lb</div>
+                <div class="s">sturdy/cargo DNA</div>
+              </div>
+            </div>
+
+            <div class="twoCol">
+              <div class="list">
+                <h3>✅ Pros (she’s not struggling)</h3>
+                <ul>
+                  <li><b>SF hill cheat code</b>: mid-drive plays with gears—typically feels stronger + smoother on steep climbs.</li>
+                  <li><b>Dealer life</b>: built for local shop support, tune-ups, and a calmer ownership experience.</li>
+                  <li><b>Mini cargo queen</b>: built to haul groceries, bags, and potentially a passenger setup.</li>
+                  <li><b>Security + smart system</b>: Bosch ecosystem features (lock/tracking/alarm depending on config).</li>
+                </ul>
+              </div>
+              <div class="list">
+                <h3>⚠️ Cons (your wallet will remember)</h3>
+                <ul>
+                  <li><b>Price</b>: it’s “this might be my forever bike” money.</li>
+                  <li><b>Speed cap</b>: Class 1 means 20 mph assist—more “elegant commute” than “zoomies.”</li>
+                  <li><b>Heavier</b>: great stability, less fun to carry up stairs.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section">
+              <h2>Tern in one sentence</h2>
+              <p>
+                If you want <b>maximum confidence on steep hills</b>, a premium dealer-supported ecosystem, and real cargo flexibility,
+                this is the “I bought the good one and now I’m smug” option.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SF Hill section + Chooser -->
+      <div class="card" style="margin-top:14px;">
+        <div class="card-h">
+          <div class="title">
+            <strong class="spark">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 18l6-8 4 5 3-4 3 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              SF hill reality check
+            </strong>
+            <span>because your street is dramatic and you deserve a bike that matches</span>
+          </div>
+          <div class="badge"><b>TL;DR</b> <span class="mono">for hills</span></div>
+        </div>
+
+        <div class="card-b">
+          <div class="callouts">
+            <div class="callout">
+              <div class="h">
+                <b>Steep hill feel (stop-to-go climbs)</b>
+                <span class="tag ok">Tern advantage</span>
+              </div>
+              <p>
+                On steep grades, a mid-drive generally feels more “effortless” because it uses the bike’s gearing more effectively.
+                If your hill is the kind that makes visitors say “oh wow,” the Tern is the calmer answer.
+              </p>
+            </div>
+            <div class="callout">
+              <div class="h">
+                <b>Stairs / storage / hauling the bike</b>
+                <span class="tag warn">Lectric advantage</span>
+              </div>
+              <p>
+                If you ever carry the bike (stairs, tight hallway, lifting into a car),
+                the lighter setup + removable battery on the Lectric makes life easier.
+              </p>
+            </div>
+            <div class="callout">
+              <div class="h">
+                <b>“I want it to just work” ownership vibe</b>
+                <span class="tag ok">Tern advantage</span>
+              </div>
+              <p>
+                Dealer setup + Bosch ecosystem is very “grown-up, handled.” Fewer DIY moments.
+              </p>
+            </div>
+            <div class="callout">
+              <div class="h">
+                <b>Value + speed settings</b>
+                <span class="tag hot">Lectric advantage</span>
+              </div>
+              <p>
+                If you want maximum spec-per-dollar and you like a faster assist setting,
+                Lectric is basically a bargain that also happens to be stylishly overqualified.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Mini chooser (tell us what you care about)</h2>
+            <p>Slide these and we’ll crown a winner. (It’s science. Gay science.)</p>
+
+            <div class="chooser" id="chooser">
+              <div class="row">
+                <label>⛰️ Hill power</label>
+                <input type="range" min="0" max="10" value="8" id="w_hill" />
+                <div class="num" id="n_hill">8</div>
+              </div>
+
+              <div class="row">
+                <label>🧰 Dealer support</label>
+                <input type="range" min="0" max="10" value="6" id="w_dealer" />
+                <div class="num" id="n_dealer">6</div>
+              </div>
+
+              <div class="row">
+                <label>🛍️ Cargo / errands</label>
+                <input type="range" min="0" max="10" value="6" id="w_cargo" />
+                <div class="num" id="n_cargo">6</div>
+              </div>
+
+              <div class="row">
+                <label>⚡ Speed vibe</label>
+                <input type="range" min="0" max="10" value="4" id="w_speed" />
+                <div class="num" id="n_speed">4</div>
+              </div>
+
+              <div class="row">
+                <label>💸 Budget sensitivity</label>
+                <input type="range" min="0" max="10" value="7" id="w_budget" />
+                <div class="num" id="n_budget">7</div>
+              </div>
+
+              <div class="row">
+                <label>🧼 Low-maintenance</label>
+                <input type="range" min="0" max="10" value="6" id="w_maint" />
+                <div class="num" id="n_maint">6</div>
+              </div>
+
+              <div class="row">
+                <label>🏠 Easy to store/carry</label>
+                <input type="range" min="0" max="10" value="5" id="w_carry" />
+                <div class="num" id="n_carry">5</div>
+              </div>
+            </div>
+
+            <div class="btns">
+              <button id="btnCompute">Crown the winner 👑</button>
+              <button id="btnHillMax">I live on a villain hill</button>
+              <button id="btnBudgetMax">I love my bank account</button>
+              <button id="btnReset">Reset</button>
+            </div>
+
+            <div class="verdict" id="verdict">
+              <h3>👑 Verdict: <span id="winnerName">tap “Crown the winner”</span></h3>
+              <p id="winnerCopy">We’ll pick a bike based on your sliders and explain why.</p>
+              <div class="small" id="scoreLine"></div>
+            </div>
+
+            <div class="footer">
+              <div style="display:flex; gap:10px; flex-wrap: wrap; align-items:center; justify-content: space-between;">
+                <div>
+                  Source links:
+                  <a href="https://lectricebikes.com/products/lectric-one-long-range-ebike" target="_blank" rel="noopener">Lectric ONE Long-Range</a> ·
+                  <a href="https://www.ternbicycles.com/us/bikes/472/hsd-s00" target="_blank" rel="noopener">Tern HSD S00</a>
+                </div>
+                <div class="mono">built with ✨ dramatic competence ✨</div>
+              </div>
+              <div style="margin-top:8px;">
+                Prices and specs can change; treat this as a lovingly biased friend-guide, then confirm final details on the product pages.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // ===== Dramatic Gift Logic =====
+    (function(){
+      const overlay = document.getElementById('overlay');
+      const giftStage = document.getElementById('giftStage');
+      const openBtn = document.getElementById('openGiftBtn');
+      const skipBtn = document.getElementById('skipBtn');
+      const confetti = document.getElementById('confetti');
+
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function hideOverlay(){
+        overlay.classList.add('fadeOut');
+        setTimeout(() => overlay.classList.add('hidden'), 520);
+      }
+
+      function sprinkleConfetti(){
+        confetti.innerHTML = "";
+        const colors = [
+          "rgba(255,62,165,.95)",
+          "rgba(124,77,255,.95)",
+          "rgba(55,213,255,.95)",
+          "rgba(93,255,135,.95)",
+          "rgba(255,206,84,.95)"
+        ];
+
+        const count = prefersReduced ? 0 : 90;
+        for(let i=0;i<count;i++){
+          const d = document.createElement('div');
+          d.className = 'conf';
+          d.style.left = (Math.random() * 100) + '%';
+          d.style.background = colors[Math.floor(Math.random()*colors.length)];
+          d.style.animationDuration = (900 + Math.random()*900) + 'ms';
+          d.style.animationDelay = (Math.random()*180) + 'ms';
+          d.style.transform = `rotate(${Math.random()*360}deg)`;
+          d.style.width = (8 + Math.random()*10) + 'px';
+          d.style.height = (10 + Math.random()*14) + 'px';
+          confetti.appendChild(d);
+        }
+      }
+
+      function openGift(){
+        if (prefersReduced){
+          hideOverlay();
+          return;
+        }
+        giftStage.classList.add('opening');
+        sprinkleConfetti();
+
+        // Let the moment land, then reveal the page.
+        setTimeout(() => hideOverlay(), 1700);
+      }
+
+      openBtn.addEventListener('click', openGift);
+      skipBtn.addEventListener('click', hideOverlay);
+
+      // If user has reduced motion enabled, skip automatically.
+      if (prefersReduced){
+        setTimeout(() => hideOverlay(), 120);
+      }
+    })();
+
+    // ===== Chooser Logic =====
+    (function(){
+      const sliders = [
+        ['hill','w_hill','n_hill'],
+        ['dealer','w_dealer','n_dealer'],
+        ['cargo','w_cargo','n_cargo'],
+        ['speed','w_speed','n_speed'],
+        ['budget','w_budget','n_budget'],
+        ['maint','w_maint','n_maint'],
+        ['carry','w_carry','n_carry'],
+      ];
+
+      const els = {};
+      sliders.forEach(([key, sid, nid]) => {
+        els[key] = document.getElementById(sid);
+        const num = document.getElementById(nid);
+        const sync = () => num.textContent = els[key].value;
+        els[key].addEventListener('input', sync);
+        sync();
+      });
+
+      const verdictName = document.getElementById('winnerName');
+      const verdictCopy = document.getElementById('winnerCopy');
+      const scoreLine = document.getElementById('scoreLine');
+
+      // Attribute scores (0-10) — intentionally opinionated + SF-hill-aware.
+      const bikes = {
+        lectric: {
+          name: "Lectric ONE Long-Range",
+          vibes: "value diva",
+          scores: {
+            hill: 7,     // powerful hub, but not as “gear-assisted” as mid-drive
+            dealer: 5,   // DTC + service network vs dealer-only ecosystem
+            cargo: 6,    // fine for commuting/errands, not a dedicated cargo beast
+            speed: 9,    // up to 28 mph setting
+            budget: 10,  // price
+            maint: 8,    // belt + gearbox = clean
+            carry: 9,    // lighter
+          },
+          pitch:
+            "Pick this if you want max value + a surprisingly fancy drivetrain, and you’re okay with steep climbs feeling a little more ‘work’ than a premium mid-drive."
+        },
+        tern: {
+          name: "Tern HSD S00 (Gen 2)",
+          vibes: "mountain goat",
+          scores: {
+            hill: 9,     // mid-drive + sensors + gearing
+            dealer: 9,   // dealer ecosystem
+            cargo: 10,   // compact cargo identity
+            speed: 7,    // 20 mph class 1
+            budget: 4,   // pricey
+            maint: 9,    // belt + IGH, premium build
+            carry: 5,    // heavier
+          },
+          pitch:
+            "Pick this if your hill is outrageous and you want the smoothest, most confident climb + dealer support + real cargo capability."
+        }
+      };
+
+      function getWeights(){
+        return {
+          hill: +els.hill.value,
+          dealer: +els.dealer.value,
+          cargo: +els.cargo.value,
+          speed: +els.speed.value,
+          budget: +els.budget.value,
+          maint: +els.maint.value,
+          carry: +els.carry.value,
+        };
+      }
+
+      function scoreBike(bikeKey, w){
+        const s = bikes[bikeKey].scores;
+        // Weighted sum
+        return (
+          w.hill   * s.hill +
+          w.dealer * s.dealer +
+          w.cargo  * s.cargo +
+          w.speed  * s.speed +
+          w.budget * s.budget +
+          w.maint  * s.maint +
+          w.carry  * s.carry
+        );
+      }
+
+      function compute(){
+        const w = getWeights();
+        const L = scoreBike('lectric', w);
+        const T = scoreBike('tern', w);
+
+        const winner = (T > L) ? 'tern' : 'lectric';
+        const loser  = (winner === 'tern') ? 'lectric' : 'tern';
+
+        verdictName.textContent = bikes[winner].name;
+
+        // Add a little SF-specific guidance.
+        const hillHeavy = w.hill >= 8;
+        const budgetHeavy = w.budget >= 8;
+        const cargoHeavy = w.cargo >= 7;
+        const carryHeavy = w.carry >= 7;
+
+        let extra = "";
+        if (hillHeavy && winner === 'tern') extra = "This is the ‘I refuse to suffer on my own street’ choice.";
+        if (budgetHeavy && winner === 'lectric') extra = "This is the ‘I want joy without a second mortgage’ choice.";
+        if (cargoHeavy && winner === 'tern') extra = "Also: groceries + passenger potential? Yes, queen.";
+        if (carryHeavy && winner === 'lectric') extra = "Also: stairs/storage reality? This stays friendlier.";
+
+        verdictCopy.textContent =
+          bikes[winner].pitch +
+          (extra ? (" " + extra) : "") +
+          " If you’re torn, choose the winner and spend the leftover emotional energy on a cute helmet.";
+
+        scoreLine.textContent =
+          `Scores → ${bikes.lectric.name}: ${Math.round(L)} · ${bikes.tern.name}: ${Math.round(T)} · (Higher wins. Pettiness included.)`;
+
+        // Tiny visual emphasis
+        const cardLectric = document.getElementById('card-lectric');
+        const cardTern = document.getElementById('card-tern');
+        cardLectric.style.outline = (winner === 'lectric') ? "2px solid rgba(255,62,165,.55)" : "none";
+        cardTern.style.outline    = (winner === 'tern')    ? "2px solid rgba(93,255,135,.45)" : "none";
+      }
+
+      function setPreset(preset){
+        const set = (key, val) => { els[key].value = val; document.getElementById('n_'+key).textContent = val; };
+
+        if (preset === 'hill'){
+          set('hill', 10);
+          set('dealer', 7);
+          set('cargo', 7);
+          set('speed', 3);
+          set('budget', 4);
+          set('maint', 7);
+          set('carry', 4);
+        } else if (preset === 'budget'){
+          set('hill', 7);
+          set('dealer', 4);
+          set('cargo', 5);
+          set('speed', 6);
+          set('budget', 10);
+          set('maint', 6);
+          set('carry', 7);
+        } else if (preset === 'reset'){
+          set('hill', 8);
+          set('dealer', 6);
+          set('cargo', 6);
+          set('speed', 4);
+          set('budget', 7);
+          set('maint', 6);
+          set('carry', 5);
+        }
+      }
+
+      document.getElementById('btnCompute').addEventListener('click', compute);
+      document.getElementById('btnHillMax').addEventListener('click', () => { setPreset('hill'); compute(); });
+      document.getElementById('btnBudgetMax').addEventListener('click', () => { setPreset('budget'); compute(); });
+      document.getElementById('btnReset').addEventListener('click', () => { setPreset('reset'); compute(); });
+
+      // Auto compute once on load so it feels alive.
+      compute();
+    })();
+  </script>
+</body>
+</html>
